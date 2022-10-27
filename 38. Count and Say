@@ -1,0 +1,17 @@
+string countAndSay(int n) {
+        if(n==1) return "1";
+        string s = countAndSay(n-1);
+        string res="";
+        char curr=s[0];
+        int l=s.size(),c=1;
+        for(int i=1;i<l;i++){
+            if(curr==s[i]) c++;
+            else{
+                res+=to_string(c)+curr;
+                curr=s[i];
+                c=1;
+            }
+        }
+        res+=to_string(c)+curr;
+        return res;
+    }
